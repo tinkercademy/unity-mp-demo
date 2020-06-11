@@ -6,9 +6,9 @@ using Mirror;
 
 public class PlayerScript : NetworkBehaviour
 {
-	//public List<Material> materialList = new List<Material>();
-	//public Button choiceButtonPrefab;
-	//private Transform canvasTransform;
+	public List<Material> materialList = new List<Material>();
+	public Button choiceButtonPrefab;
+	private Transform canvasTransform;
 	
     public override void OnStartClient()
     {
@@ -18,7 +18,7 @@ public class PlayerScript : NetworkBehaviour
 		}
 		
 		
-		/*canvasTransform = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Transform>();
+		canvasTransform = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Transform>();
 		
 		for (int i=0; i<materialList.Count; i++) {
 			Button choiceButton = Instantiate(choiceButtonPrefab, canvasTransform);
@@ -28,10 +28,10 @@ public class PlayerScript : NetworkBehaviour
 			choiceButton.GetComponent<RectTransform>().anchoredPosition = pos;
 			int temp = i;
 			choiceButton.onClick.AddListener(delegate {CmdSetTexture(temp);});
-		}*/
+		}
     }
 	
-	/*[Command]
+	[Command]
 	void CmdSetTexture(int index) {
 		RpcSetTexture(index);
 	}
@@ -39,7 +39,7 @@ public class PlayerScript : NetworkBehaviour
 	[ClientRpc]
 	void RpcSetTexture(int index) {
 		GetComponent<Renderer>().material = materialList[index];
-	}*/
+	}
 
     // Update is called once per frame
     void Update()
